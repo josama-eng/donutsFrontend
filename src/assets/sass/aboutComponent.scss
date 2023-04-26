@@ -1,0 +1,66 @@
+@import "./setup/theme.scss";
+
+.about {
+  width: 100%;
+  height: 100%;
+  padding: 100px 50px;
+  background: $homeTextColor;
+  @include flex(flex, space-between, center, row, 0px, wrap);
+  color: $white;
+  @media screen and (max-width: 900px) {
+    @include flex(flex, space-between, center, column, 30px, wrap);
+  }
+  @media screen and (max-width: 790px) {
+    padding: 20px 30px;
+  }
+  .content {
+    max-width: 30%;
+    @media screen and (max-width: 900px) {
+      max-width: 100%;
+    }
+    h2 {
+      font-size: 35px;
+      padding-bottom: 20px;
+      font-weight: 300;
+    }
+    p {
+      line-height: 2.5rem;
+    }
+  }
+  .categories {
+    max-width: 60%;
+    display: flex;
+    justify-content: center;
+    @media screen and (max-width: 900px) {
+      max-width: 100%;
+    }
+    @media screen and (max-width: 790px) {
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+    .category {
+      max-width: 45%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0 20px;
+      @media screen and (max-width: 790px) {
+        max-width: 100%;
+      }
+      h3 {
+        @include links;
+      }
+      img {
+        width: 160px;
+        height: 160px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 10px solid $white;
+      }
+      p {
+        line-height: 2rem;
+      }
+    }
+  }
+}

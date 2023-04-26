@@ -1,0 +1,39 @@
+@import "./setup/theme.scss";
+
+.iceCreamContainer {
+  width: 100%;
+  min-height: 100vh;
+  background: $bodyBck;
+  @include flex(flex, space-between, center, row, 0px, wrap);
+  @media screen and (max-width: 480px) {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .left {
+    width: 48%;
+    height: 100vh;
+    background: url("../images/iceCream.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    @media screen and (max-width: 480px) {
+      width: 100%;
+    }
+  }
+  .right {
+    width: 48%;
+    background: $homeTextColor;
+    @media screen and (max-width: 480px) {
+      width: 100%;
+    }
+    h2 {
+      font-size: 35px;
+      font-family: "Caveat", cursive;
+      padding: 20px 30px;
+    }
+    p {
+      line-height: 2rem;
+      padding: 10px 30px;
+    }
+  }
+}

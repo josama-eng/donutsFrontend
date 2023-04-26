@@ -1,0 +1,44 @@
+@import "./setup/theme.scss";
+
+.checkout-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  background: #d7ede2;
+  @include flex(flex, center, center, column, 10px, wrap);
+
+  .checkout-box {
+    width: 1000px;
+    padding: 40px;
+    background: rgba(51, 50, 50, 0.7);
+    @media screen and (max-width: 610px) {
+      width: 500px;
+    }
+    @media screen and (max-width: 500px) {
+      width: 400px;
+    }
+    @media screen and (max-width: 410px) {
+      width: 350px;
+    }
+
+    button {
+      @include Btn;
+      margin-top: 20px;
+      @media screen and (max-width: 1000px) {
+        color: #333232;
+      }
+    }
+    .user-box {
+      position: relative;
+      input {
+        @include input;
+      }
+
+      label {
+        @include label;
+      }
+      p {
+        margin: 20px 0;
+      }
+    }
+  }
+}

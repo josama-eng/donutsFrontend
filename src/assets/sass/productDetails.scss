@@ -1,0 +1,74 @@
+@import "./setup/theme.scss";
+
+// @include flex(flex, space-between, flex-start, row, 20px, wrap);
+
+.singleProductContainer {
+  width: 100%;
+  min-height: 100vh;
+  @include flex(flex, space-between, center, row, 20px, wrap);
+  background: $dark;
+  color: $white;
+  @media screen and (max-width: 1000px) {
+    flex-direction: column-reverse;
+  }
+  @media screen and (max-width: 730px) {
+    height: 100%;
+  }
+  .img {
+    width: 45%;
+    height: 100vh;
+    @media screen and (max-width: 1000px) {
+      width: 100%;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      @media screen and (max-width: 768px) {
+        object-fit: contain;
+      }
+      @media screen and (max-width: 730px) {
+        height: 100%;
+      }
+    }
+  }
+  .content {
+    width: 45%;
+    height: 100vh;
+    padding: 0 30px;
+    @include flex(flex, center, center, column, 10px, wrap);
+    @media screen and (max-width: 1000px) {
+      justify-content: flex-start;
+      width: 100%;
+      height: 100%;
+    }
+    @media screen and (max-width: 730px) {
+      height: 100%;
+    }
+    h3 {
+      text-align: center;
+      padding: 20px 0;
+      font-size: 55px;
+      font-family: "Caveat", cursive;
+    }
+    p {
+      text-align: center;
+    }
+    .price {
+      color: $homeTextColor;
+      font-size: 20px;
+      padding: 10px 0;
+    }
+    button {
+      @include Btn;
+      letter-spacing: 1px;
+      margin-top: 20px;
+      text-transform: capitalize;
+      font-size: 18px;
+      &::before {
+        background: $homeTextColor;
+      }
+    }
+  }
+}

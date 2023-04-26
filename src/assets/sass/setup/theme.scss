@@ -1,0 +1,219 @@
+//colors
+$baseRose: #fed8df;
+$blue: #d7e4f6;
+$homeTextColor: #ff7074;
+$white: #fff;
+$textColor: #949393;
+$aboutBck: #555272;
+$bodyBck: #e0e5eb;
+$dark: #333232;
+
+//flex mixin
+
+@mixin flex(
+  $display,
+  $justify-content,
+  $align-items,
+  $flex-direction,
+  $gap,
+  $flex-wrap
+) {
+  display: $display;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  flex-direction: $flex-direction;
+  gap: $gap;
+  flex-wrap: $flex-wrap;
+}
+
+li {
+  list-style: none;
+}
+
+//buttons
+@mixin button {
+  border: none;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  font-weight: bold;
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.5s;
+  margin-top: 40px;
+  letter-spacing: 3px;
+  background: transparent;
+  &:hover {
+    background: #fff;
+    color: #272727;
+    border-radius: 5px;
+  }
+  span {
+    position: absolute;
+    display: block;
+    &:nth-child(1) {
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #fff);
+      animation: btn-anim1 1.5s linear infinite;
+    }
+    &:nth-child(2) {
+      top: -100%;
+      right: 0;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(180deg, transparent, #fff);
+      animation: btn-anim2 1.5s linear infinite;
+      animation-delay: 0.375s;
+    }
+    &:nth-child(3) {
+      bottom: 0;
+      right: -100%;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(270deg, transparent, #fff);
+      animation: btn-anim3 1.5s linear infinite;
+      animation-delay: 0.75s;
+    }
+    &:nth-child(4) {
+      bottom: -100%;
+      left: 0;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(360deg, transparent, #fff);
+      animation: btn-anim4 1.5s linear infinite;
+      animation-delay: 1.125s;
+    }
+  }
+}
+
+@mixin input {
+  width: 100%;
+  padding: 20px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+  &:focus ~ label {
+    top: -20px;
+    left: 0;
+    color: #fff;
+    font-size: 12px;
+  }
+}
+
+@mixin label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+@mixin textarea {
+  width: 100%;
+  height: 120px;
+  font-size: 18px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+  resize: none;
+  font-family: "Poppins", sans-serif;
+  outline: none;
+  &:focus ~ label {
+    top: -20px;
+    left: 0;
+    color: #fff;
+    font-size: 12px;
+  }
+}
+
+@mixin Btn {
+  padding: 15px 30px;
+  border: none;
+  outline: none;
+  border-radius: 30px;
+  font-size: 20px;
+  z-index: 1;
+  position: relative;
+  -webkit-box-shadow: 0 5px 15px rgba(33, 33, 33, 0.2);
+  box-shadow: 0 5px 15px rgba(33, 33, 33, 0.2);
+  overflow: hidden;
+  font-weight: 700;
+  color: $dark;
+  cursor: pointer;
+  @media screen and (max-width: 1000px) {
+    color: $white;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    background-color: $dark;
+    z-index: -1;
+    overflow: hidden;
+    -webkit-transform: scaleX(0);
+    -ms-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transform-origin: right;
+    -ms-transform-origin: right;
+    transform-origin: right;
+    -webkit-transition: -webkit-transform 0.2s ease-in;
+    transition: -webkit-transform 0.2s ease-in;
+    transition: transform 0.2s ease-in;
+  }
+  &:hover {
+    color: #e8e8e8;
+  }
+  &:hover::before {
+    -webkit-transform: scaleX(1);
+    -ms-transform: scaleX(1);
+    transform: scaleX(1);
+    -webkit-transform-origin: left;
+    -ms-transform-origin: left;
+    transform-origin: left;
+  }
+}
+
+@mixin links {
+  width: 100%;
+  font-size: 25px;
+  color: white;
+  font-weight: 700;
+  position: relative;
+  transition: all 0.5s;
+  z-index: 1;
+  margin: 20px 0;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -10px;
+    width: 5px;
+    height: 100%;
+    background-color: $dark;
+    z-index: -1;
+    transition: all 0.5s;
+  }
+  &:hover::before {
+    width: 100%;
+  }
+  &:active::before {
+    background: #b9b9b9;
+  }
+}

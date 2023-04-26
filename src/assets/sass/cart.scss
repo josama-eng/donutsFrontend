@@ -1,0 +1,68 @@
+@import "./setup/theme.scss";
+
+// @include flex(flex, center, center, column, 10px, wrap);
+.cartWrapper {
+  width: 100%;
+  min-height: 100vh;
+  @include flex(flex, flex-start, center, column, 20px, wrap);
+  background: $bodyBck;
+  .cartProduct {
+    width: 100%;
+    @include flex(flex, flex-start, center, row, 10px, wrap);
+    box-shadow: 1px 10px 5px 0px rgba(53, 50, 50, 0.75);
+    -webkit-box-shadow: 1px 10px 5px 0px rgba(53, 50, 50, 0.75);
+    -moz-box-shadow: 1px 10px 5px 0px rgba(53, 50, 50, 0.75);
+    background: $dark;
+    color: $white;
+    img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+    }
+    .content {
+      h3 {
+        @media screen and (max-width: 370px) {
+          font-size: 15px;
+        }
+      }
+      p {
+        text-align: center;
+      }
+      .counter {
+        @include flex(flex, center, center, row, 0px, wrap);
+        p {
+          background: $dark;
+          padding: 10px 15px;
+          color: $white;
+          font-weight: 400;
+          margin: 10px 0;
+        }
+      }
+      .btnRemove {
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        .iconRemove {
+          fill: $white;
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+  }
+  .btnCheckout {
+    @include Btn;
+    margin: 20px 0;
+    @media screen and (max-width: 1000px) {
+      color: $dark;
+    }
+  }
+
+  .totalPrice {
+    margin-top: 10px;
+    background: $dark;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 10px;
+  }
+}

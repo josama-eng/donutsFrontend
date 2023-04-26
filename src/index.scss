@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap");
+@import "../src/assets/sass/nav.scss";
+@import "../src/assets/sass/homePage.scss";
+@import "../src/assets/sass/register.scss";
+@import "../src/assets/sass/contactPage.scss";
+@import "../src/assets/sass/aboutComponent.scss";
+@import "../src/assets/sass/iceCream.scss";
+@import "../src/assets/sass/loginPage.scss";
+@import "../src/assets/sass/footerComponent.scss";
+@import "../src/assets/sass/slider.scss";
+@import "../src/assets/sass/CategoryShop.scss";
+@import "../src/assets/sass/productDetails.scss";
+@import "../src/assets/sass/cart.scss";
+@import "../src/assets/sass/checkout.scss";
+@import "../src/assets/sass/order.scss";
+
+//
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 18px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+}
+.linkReset {
+  text-decoration: none;
+  color: inherit;
+}

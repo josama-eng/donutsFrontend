@@ -1,0 +1,19 @@
+@import "./setup/theme.scss";
+
+.sliderContainer {
+  width: 100%;
+  height: 100%;
+  background: $bodyBck;
+  h2 {
+    text-align: center;
+    padding: 20px 0;
+    font-family: "Caveat", cursive;
+    font-size: 35px;
+    color: $dark;
+  }
+  img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+  }
+}
