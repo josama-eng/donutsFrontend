@@ -17,7 +17,7 @@ const PaymentComponent = ({ ck }) => {
     stripe.confirmPayment({
       elements,
       confirmParams: {
-        return_url: "https://donuts.netlify.app/order",
+        return_url: `${process.env.PUBLIC_URL}/order`,
       },
     });
   };
