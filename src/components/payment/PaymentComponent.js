@@ -17,7 +17,7 @@ const PaymentComponent = ({ ck }) => {
     stripe.confirmPayment({
       elements,
       confirmParams: {
-        return_url: `${process.env.PUBLIC_URL}/order`,
+        return_url: "https://tubular-sundae-150fb1.netlify.app/order",
       },
     });
   };
