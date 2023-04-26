@@ -93,7 +93,10 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <RouterProvider router={router} basename="/my-app" />
+        <RouterProvider
+          router={router}
+          basename="https://tubular-sundae-150fb1.netlify.app/"
+        />
       </PersistGate>
     </Provider>
   </React.StrictMode>
