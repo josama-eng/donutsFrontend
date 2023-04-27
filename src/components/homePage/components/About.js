@@ -19,6 +19,11 @@ const About = () => {
       });
   }, [setCategories]);
 
+  const variants = {
+    hidden: { x: "-100%" },
+    visible: { x: 0 },
+  };
+
   const renderCategories = () => {
     return categories.map((category, index) => {
       return (
@@ -48,9 +53,11 @@ const About = () => {
     <div className="about">
       <motion.div
         className="content"
-        animate={{ opacity: inView ? 1 : 0 }}
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
         transition={{ duration: 1.7 }}
         ref={ref}
+        variants={variants}
       >
         <h2>What We Do</h2>
         <p>
