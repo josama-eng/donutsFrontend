@@ -51,14 +51,7 @@ const About = () => {
   };
   return (
     <div className="about">
-      <motion.div
-        className="content"
-        initial="hidden"
-        animate={inView ? "visible" : "hidden"}
-        transition={{ duration: 1.7 }}
-        ref={ref}
-        variants={variants}
-      >
+      <div className="content">
         <h2>What We Do</h2>
         <p>
           Welcome to our online shop, where you can discover the perfect balance
@@ -68,7 +61,7 @@ const About = () => {
           unique combinations, we've got something for everyone. So go ahead and
           satisfy your cravings by ordering now - you won't regret it!
         </p>
-      </motion.div>
+      </div>
       <div className="categories">{renderCategories()}</div>
     </div>
   );
