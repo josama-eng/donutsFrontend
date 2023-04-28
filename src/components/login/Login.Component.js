@@ -36,7 +36,7 @@ const LoginComponent = () => {
               );
               navigate("/register");
             } else if (response.status === 216) {
-              toast.info(
+              toast.error(
                 "You are not an active user. Please activate your account."
               );
             } else if (response.status === 217) {
