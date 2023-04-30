@@ -55,7 +55,11 @@ const NavComponent = () => {
           </Link>
         </div>
         <div className="right">
-          <SearchComponent />
+          {window.location.pathname === "/" ||
+          window.location.pathname === "/shop" ||
+          window.location.pathname === "/cart" ? (
+            <SearchComponent />
+          ) : null}
           <Link
             to="/cart"
             onClick={closeMenu}
