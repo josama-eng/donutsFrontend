@@ -1,4 +1,4 @@
-Live demo: https://649703321428006c32eb4550--ornate-gumption-d2edad.netlify.app/
+
 
 
 # Getting Started with Create React App
